@@ -46,7 +46,7 @@ def clothes_detail(request, id):
     # add the dictionary during initialization
     context["cloth"] = Clothes.objects.get(id=id)
 
-    return render(request, "main/clothes_detail.html", context)
+    return render(request, 'main/clothes_detail.html', context)
 
 
 def remove(request, id):
@@ -67,7 +67,7 @@ def clothes_update(request, id):
         if form.is_valid():
             form.save()
             return redirect('admin')
-    return render(request, "main/clothes_update.html", {"cloth": cloth})
+    return render(request, 'main/clothes_update.html', {"cloth": cloth})
 
 
 def login_request(request):
