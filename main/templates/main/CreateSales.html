@@ -1,0 +1,21 @@
+{% extends 'main/baseAdmin.html' %}
+{% load static %}
+{% block title %}
+Main Page
+{% endblock %}
+
+{% block content %}
+<h1>Add a new sale</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.image }} <br>
+        {{ form.old_price }} <br>
+        {{ form.new_price }} <br>
+        {{ form.category }} <br>
+        {{ form.gender }} <br>
+        {{ form.available }} <br>
+        <button type="submit" class="btn btn-success">Add</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

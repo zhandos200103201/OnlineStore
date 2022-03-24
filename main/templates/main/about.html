@@ -1,8 +1,93 @@
-{% extends 'main/base.html' %}
-{% block title %}
-About us
-{% endblock %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{%static 'css/about.css' %}">
+</head>
+<body>
+{% load static %}
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap"/>
+        </svg>
+    </a>
 
-{% block content %}
-<h1>This is the page about us</h1>
-{% endblock %}
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{% url 'all' %}" class="nav-link px-2 link-dark">All</a></li>
+        <li><a href="{% url 'kids' %}" class="nav-link px-2 link-dark">Kids</a></li>
+        <li><a href="{% url 'products' %}" class="nav-link px-2 link-dark">Products</a></li>
+        <li><a href="{% url 'sales' %}" class="nav-link px-2 link-dark">Sales</a></li>
+        <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark">About</a></li>
+    </ul>
+    <div class="col-md-3 text-end">
+        <a href="{% url 'login' %}">
+            <button type="button" class="btn btn-outline-primary me-2">Login</button>
+        </a>
+        <a href="{% url 'register' %}">
+            <button type="button" class="btn btn-outline-primary me-2">Sign up</button>
+        </a>
+    </div>
+</header>
+<div class="about-section">
+    <h1>About Us Page</h1>
+    <p>Some text about who we are and what we do.</p>
+    <p>Resize the browser window to see that this page is responsive by the way.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="grid-container">
+    <div class="grid-item">
+        <div class="card">
+            <img src="http://stan.kz/download/uploads/burkit.jpg" alt="Serik"
+                 style="width:100%">
+            <div class="container">
+                <br>
+                <h2>Onbolsyn Serik</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>jane@example.com</p>
+                <p>
+                    <button class="button">Contact</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="card">
+            <img src="https://i.natgeofe.com/n/914ced12-24d0-4405-889e-4290b9f9009d/gray-wolf_thumb_3x2.JPG" alt="Mike"
+                 style="width:100%">
+            <div class="container">
+                <br>
+                <h2>Umid Jubayev</h2>
+                <p class="title">CEO & Founder</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>mike@example.com</p>
+                <p>
+                    <button class="button">Contact</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item">
+        <div class="card">
+            <img src="https://www.natureinprint.com/p/751/lion-panthera-leo-adult-male-lying-down-kenya-19881379.jpg.webp"
+                 alt="John" style="width:100%">
+            <div class="container">
+                <br>
+                <h2>Zhandos Saparbayev</h2>
+                <p class="title">Designer</p>
+                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                <p>john@example.com</p>
+                <p>
+                    <button class="button">Contact</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'main/baseAdmin.html' %}
+{% load static %}
+{% block title %}
+Admin Panel
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <!-- Specify fields to be displayed -->
+    {{ cloth.name }}<br/>
+    {{ cloth.category }}<br/>
+    {{ cloth.gender }}<br/>
+    {{ cloth.price }}<br/>
+    {{ cloth.available }}<br/>
+    {{ cloth.image }}<br/>
+
+</div>
+{% endblock %}

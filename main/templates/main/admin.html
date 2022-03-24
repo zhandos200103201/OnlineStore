@@ -1,8 +1,41 @@
-{% extends 'main/base.html' %}
+{% extends 'main/baseAdmin.html' %}
+{% load static %}
 {% block title %}
-Admin panel
+Admin Panel
 {% endblock %}
 
 {% block content %}
-<h1>This is the admin panel</h1>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Gender</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Available</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for cloth in clothes %}
+    <tr>
+        <td>{{ cloth.name }}</td>
+        <td>{{ cloth.category }}</td>
+        <td>{{ cloth.gender }}</td>
+        <td>{{ cloth.image }}</td>
+        <td>{{ cloth.price }}</td>
+        <td>{{ cloth.available }}</td>
+        <td>
+            <a href="/edit/{{ cloth.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ cloth.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="{% url 'addclothes' %}" class="btn btn-primary">Add New Record</a></center>
+
 {% endblock %}
