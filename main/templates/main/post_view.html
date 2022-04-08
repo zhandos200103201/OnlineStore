@@ -1,0 +1,20 @@
+{% extends 'main/baseAdmin.html' %}
+{% load static %}
+{% block title %}
+Post view
+{% endblock %}
+
+{% block content %}
+    <div class="grid-item">
+        <div class="card" style="width: 300px; margin: 0 20px;">
+            <div class="container" style="max-width: 300px;">
+                <img src="{{post.image}}" alt="New York" style="width:100%; height: 300px">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.name}}({{post.gender}})</h5>
+                    <p class="card-text">Cost: ${{post.price}}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

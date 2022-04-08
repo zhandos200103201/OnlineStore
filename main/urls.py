@@ -18,4 +18,5 @@ urlpatterns = [
     path('edit/<int:id>', views.edit),
     path('delete/<int:id>', views.remove),
     path('update/<int:id>', views.clothes_update, name='update'),
+    path('post/<int:post_id>', views.show_post, name='post')
 ]

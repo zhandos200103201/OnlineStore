@@ -136,3 +136,9 @@ def addSales(request):
         else:
             error = 'Форма была неправильной'
     return render(request, 'main/CreateSales.html', {"form": form, "error": error})
+
+
+
+def show_post(request, post_id):
+    post = get_object_or_404(Clothes, pk=post_id)
+    return render(request, "main/post_view.html", {"post": post})

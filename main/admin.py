@@ -11,7 +11,7 @@ admin.site.register(Gift)
 
 @admin.register(Clothes)
 class ClothesAdmin(admin.ModelAdmin):
-    list_display = ['name', 'image_show', 'category', 'price', 'available', 'gender']
+    list_display = ['name', 'slug', 'image_show', 'category', 'price', 'available', 'gender']
     list_filter = ['available', 'gender', 'category']
     list_editable = ['price', 'available']
 

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Sales, Clothes, Gift, Gender
+from .models import Sales, Clothes, Gift
 from django.forms import ModelForm, TextInput, Textarea
 
 
@@ -51,6 +51,7 @@ class ClothesForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Напишите имя'
             }),
+            "slug": model.slug,
             "image": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Введите ссылку на фото'

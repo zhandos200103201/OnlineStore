@@ -3,12 +3,19 @@
 {% block title %}
 Main Page
 {% endblock %}
+{% load main_tags %}
 
 
 {% block content %}
 {% load static %}
 <div class="grid-container" style="display: grid">
-    {%for cloth in clothes%}
+
+    {% clothe_tags as tags %}
+    {% for item in tags %}
+        <h1>{{item.name}}</h1>
+    {% endfor %}
+
+    {%for cloth in clothes %}
     <div class="grid-item">
         <div class="card" style="width: 300px; margin: 0 20px;">
             <div class="container" style="max-width: 300px;">
